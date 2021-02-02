@@ -3,12 +3,12 @@ from keras.models import Model
 from keras.layers import Input,GRU,LSTM
 import numpy as np
 
-input_seq_len = 8
-dim = 2
-hidden_layers = 3
+input_seq_len = 4
+dim = 3
+hidden_layers = 2
 
 # consider this as one input sequence
-X_input = np.random.randn(1, input_seq_len, dim)
+X_input = np.random.randn(3, input_seq_len, dim)
 
 # in this function we want to get all the hidden states of LSTM
 def lstm1():
@@ -23,6 +23,7 @@ def lstm1():
     # c: cell state : long term memory
 
     print("o:{}\nh:{}\nc:{}".format(o,h,c))
+    print(o.shape, h.shape, c.shape)
 
 
 # in this function we want to get all the hidden states of LSTM
@@ -39,6 +40,7 @@ def lstm2():
     # c: cell state : long term memory
 
     print("o:{}\nh:{}\nc:{}".format(o,h,c))
+    print(o.shape, h.shape, c.shape)
 
 
 
